@@ -12,11 +12,11 @@ import java.util.Scanner;
  *
  * @author Qalbun Saliim Bakhri
  */
-public class Psikolog extends Users implements Dokter{
+public class Psikiater extends Users implements Dokter{
     
     Scanner sc = new Scanner(System.in);
-    
-    public Psikolog(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
+
+    public Psikiater(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
         super(id_user, username, password, email, role, nama, usia, tgl_lahir, alamat, kota, no_kontak);
     }
 
@@ -25,10 +25,9 @@ public class Psikolog extends Users implements Dokter{
         System.out.println("Masukkan Catatan Konsultasi:");
         String catat_konsul = sc.nextLine();
         
-        CatatanKonsultasi catatan = new CatatanKonsultasi("catatan123", super.getId_user(), p.getId_user(), super.getNama(), catat_konsul);
+        CatatanKonsultasi catatan = new CatatanKonsultasi("catatan456", super.getId_user(), p.getId_user(), super.getNama(), catat_konsul);
         
         p.tambah_catatan_konsultasi(catatan);
     }
-    
     
 }

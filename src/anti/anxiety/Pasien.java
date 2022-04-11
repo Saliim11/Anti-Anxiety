@@ -5,6 +5,7 @@
  */
 package anti.anxiety;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,23 +13,14 @@ import java.util.List;
  *
  * @author Qalbun Saliim Bakhri
  */
-public class Pasien {
-    private String nama_pasien;
+public class Pasien extends Users{
+    
     private List<CatatanKonsultasi> catatan_konsultasi;
 
-    public Pasien(String nama_pasien) {
-        this.nama_pasien = nama_pasien;
+    public Pasien(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
+        super(id_user, username, password, email, role,  nama, usia, tgl_lahir, alamat, kota, no_kontak);
         
-        this.catatan_konsultasi = new ArrayList<CatatanKonsultasi>();
-        
-    }
-
-    public String getNama_pasien() {
-        return nama_pasien;
-    }
-
-    public void setNama_pasien(String nama_pasien) {
-        this.nama_pasien = nama_pasien;
+        catatan_konsultasi = new ArrayList<>();
     }
 
     public List<CatatanKonsultasi> getCatatan_konsultasi() {
@@ -38,12 +30,14 @@ public class Pasien {
     public void setCatatan_konsultasi(List<CatatanKonsultasi> catatan_konsultasi) {
         this.catatan_konsultasi = catatan_konsultasi;
     }
-
-    public void tambah_catatan_konsultasi(CatatanKonsultasi catatan_konsultasi) {
-        this.catatan_konsultasi.add(catatan_konsultasi);
+    
+    void tambah_catatan_konsultasi(CatatanKonsultasi catatan) {
+        this.catatan_konsultasi.add(catatan);
     }
     
     public void tampilkanCatatan(int index){
         this.catatan_konsultasi.get(index).info();
     }
+
+    
 }
