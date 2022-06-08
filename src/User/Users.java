@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package anti.anxiety;
+package User;
 
+import anti.anxiety.Chat;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,25 +29,41 @@ public class Users {
     private String alamat;
     private String kota;
     private String no_kontak;
-    private boolean status_login;
+    private String status_login;
     private List<Chat> listChat;
 
-    public Users(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
+//    public Users(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
+//        this.id_user = id_user;
+//        this.username = username;
+//        this.password = password;
+//        this.email = email;
+//        
+//        this.nama = nama;
+//        this.usia = usia;
+//        
+//        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//        this.tgl_lahir = (Date)formatter.parse(tgl_lahir);
+//        
+//        this.alamat = alamat;
+//        this.kota = kota;
+//        this.no_kontak = no_kontak;
+//        this.status_login = true;
+//        listChat = new ArrayList<>();
+//    }
+
+    public Users(String id_user, String username, String password, String email, String role, String nama, int usia, Date tgl_lahir, String alamat, String kota, String no_kontak, String status_login) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
         this.email = email;
-        
+        this.role = role;
         this.nama = nama;
         this.usia = usia;
-        
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        this.tgl_lahir = (Date)formatter.parse(tgl_lahir);
-        
+        this.tgl_lahir = tgl_lahir;
         this.alamat = alamat;
         this.kota = kota;
         this.no_kontak = no_kontak;
-        this.status_login = true;
+        this.status_login = status_login;
         listChat = new ArrayList<>();
     }
 
@@ -138,11 +155,18 @@ public class Users {
         this.no_kontak = no_kontak;
     }
 
-    public boolean isStatus_login() {
+    public String getStatus_login() {
         return status_login;
     }
 
-    public void setStatus_login(boolean status_login) {
+//    public boolean isStatus_login() {
+//        return status_login;
+//    }
+//
+//    public void setStatus_login(boolean status_login) {
+//        this.status_login = status_login;
+//    }
+    public void setStatus_login(String status_login) {
         this.status_login = status_login;
     }
 

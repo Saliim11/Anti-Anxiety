@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package anti.anxiety;
+package User;
 
+import anti.anxiety.CatatanKonsultasi;
+import Interface.Dokter;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -15,10 +18,14 @@ import java.util.Scanner;
 public class Psikolog extends Users implements Dokter{
     
     Scanner sc = new Scanner(System.in);
-    
-    public Psikolog(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
-        super(id_user, username, password, email, role, nama, usia, tgl_lahir, alamat, kota, no_kontak);
+
+    public Psikolog(String id_user, String username, String password, String email, String role, String nama, int usia, Date tgl_lahir, String alamat, String kota, String no_kontak, String status_login) {
+        super(id_user, username, password, email, role, nama, usia, tgl_lahir, alamat, kota, no_kontak, status_login);
     }
+    
+//    public Psikolog(String id_user, String username, String password, String email, String role, String nama, int usia, String tgl_lahir, String alamat, String kota, String no_kontak) throws ParseException {
+//        super(id_user, username, password, email, role, nama, usia, tgl_lahir, alamat, kota, no_kontak);
+//    }
 
     @Override
     public void beriCatatanKonsultasi(Pasien p) {
